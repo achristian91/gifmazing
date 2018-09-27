@@ -1,0 +1,46 @@
+body {
+    font: 18px tahoma, sans-serif;
+    background: #A9A9A9;
+}
+
+#searches {
+    width: 100%;
+}
+form {
+    width: 22%;
+    padding: 22px;
+    float: right;
+}
+input[type="text"] {
+    width: 100%;
+    height: 25px;
+    font-size:20px;
+}x
+button,
+input[type="submit"] {
+    background:#bbb;
+    border: 0;
+    padding: 6px 20px;
+    font-size: 10px;
+    box-shadow: 2px 2px 3px white;
+    padding: 5px 20px;
+    margin: 1 10px 10px 0;
+    cursor: pointer;
+}
+button:hover,
+input[type="submit"]:hover {
+    background: yellow;
+}
+button.active {
+    background: yellow;
+}
+label {
+    display: block;
+    font-weight: 650;
+    margin-bottom: 20px;
+}
+.search-item {
+    float: left;
+    padding: 9px;
+
+}
