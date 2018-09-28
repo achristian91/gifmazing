@@ -1,6 +1,6 @@
 $(function(){
     populateButtons(topicArray,'searchButton','#buttonPlace');
-    console.log("Page Loaded")
+    console.log("Page up to date")
 })
 
 var topicArray = ['Food','Cars','Islands'];
@@ -20,8 +20,11 @@ $(document).on('click','.searchButton',function(){
     $('#searches').empty();
     var type = $(this).data('type');
     var queryURL = 'https://api.giphy.com/v1/gifs/search?q='+type+'&api_key=JQHoEBxHtNgcbtaZjK3jCBIiwlDOt4iH&limit=10';
-    $.ajax({url:queryURL,method:'GET'})
+    $.ajax({
+        url:queryURL,
+        method:'GET'})
         .done(function(response){
+
             for(var i=0;i<response.data.length;i++){
                 var searchDiv = $('<div class="search-item">');
                 var rating = response.data[i].rating;
@@ -29,6 +32,8 @@ $(document).on('click','.searchButton',function(){
                 var animated = response.data[i].images.fixed_height.url;
                 var still = response.data[i].images.fixed_height_still.url;
                 var image = $('<img>');
+
+
                 image.attr('src',still);
                 image.attr('data-still',still);
                 image.attr('data-animated',animated);
@@ -36,6 +41,7 @@ $(document).on('click','.searchButton',function(){
                 image.addClass('searchImage');
                 searchDiv.append(p);
                 searchDiv.append(image);
+
                 $('#searches').append(searchDiv);
             }
         })
