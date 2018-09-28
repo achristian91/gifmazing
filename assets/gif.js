@@ -1,9 +1,9 @@
 $(function(){
-    populateButtons(topicArray,'searchButton','#buttonPlace');
+    populateButtons(topicsArray,'searchButton','#buttonPlace');
     console.log("Page up to date")
 })
 
-var topicArray = ['Food','Cars','Islands'];
+var topicsArray = ['Food','Cars','Islands'];
 
 function populateButtons(searchArray,classToAdd,areaToAddTo){
     $(areaToAddTo).empty();
@@ -60,7 +60,7 @@ $(document).on('click','.searchImage',function(){
 
 $('#addSearch').on('click',function(){
     var newSearch = $('input').eq(0).val();
-    topicArray.push(newSearch);
-    populateButtons(topicArray,'searchButton','#buttonPlace');
+    topicsArray.push(newSearch);
+    populateButtons(topicsArray,'searchButton','#buttonPlace');
     return false;
 })
